@@ -12,5 +12,9 @@ stdin.on('data', data => {
       exit();
     }
   writableStream.write(data);
-})
+});
 
+process.on('SIGINT', () => {
+  stdout.write('Успехов в обучении в RS Scholl!');
+  exit();
+})
